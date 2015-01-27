@@ -7,10 +7,10 @@ import Diagrams.TwoD.Size
 blackFill = fc black # lw none
 sourceBar = square 1 # scaleY 0.1 # blackFill
 
-horizontalBar = sourceBar # translateY 0.18
+horizontalBar = sourceBar # scaleX 0.7 # translateY 0.18
 verticalBar = sourceBar # rotateBy (1/4)
-footBar = sourceBar # scaleX 0.5 # rotateBy (1/8) # translateY (-0.2)
-inriBar = sourceBar # scaleX 0.5 # translateY 0.3
+footBar = sourceBar # scaleX 0.4 # rotateBy (-1/8) # translateY (-0.2)
+inriBar = sourceBar # scaleX 0.4 # translateY 0.35
 
 iconSize = mkSizeSpec (Just 120) Nothing
 
