@@ -3,6 +3,7 @@
 import Diagrams.Prelude
 import Diagrams.Backend.SVG
 import Diagrams.TwoD.Size
+import Boustro (boustroLogo)
 
 blackFill = fc black # lw none
 sourceBar = square 1 # scaleY 0.1 # blackFill
@@ -23,3 +24,4 @@ main = do renderSVG "svg/cross.svg" iconSize (cross :: Diagram B R2)
           renderSVG "svg/anticross.svg" iconSize (anticross :: Diagram B R2)
           renderSVG "svg/orthodox-cross.svg" iconSize (orthodoxCross :: Diagram B R2)
           renderSVG "svg/orthodox-cross-with-inri.svg" iconSize (orthodoxCrossWithInri :: Diagram B R2)
+          renderSVG "svg/boustro-logo.svg" iconSize (boustroLogo :: Diagram B R2)
