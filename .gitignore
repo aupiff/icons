@@ -2,4 +2,5 @@
 dist/
 cabal.sandbox.config
 *.swp
+*.swo
 .DS_Store
