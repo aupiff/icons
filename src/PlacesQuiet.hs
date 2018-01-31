@@ -9,13 +9,18 @@ import Diagrams.TwoD.Size
 
 blackFill = fc black # lw none
 
-a = angleBetweenDirs (direction $ V2 2 4) (direction $ V2 0 (-1))
+h :: Double
+h = 2.2
+w :: Double
+w = 1.8
 
-scaleneTriangle = polygon ( with & polyType .~ PolySides
-                                [ a, 90 @@ deg ]
-                                [ 4, sqrt 20 ]
-                          ) # blackFill # alignT
+innerH = 1.1
+innerW = 0.6
 
-pShape = scaleneTriangle ||| (rect 1.5 2 # alignT # blackFill)
+a = angleBetweenDirs (direction $ V2 (w - innerW) h) (direction $ V2 1 0)
 
-pqLogo = pad 2.2 $ center $ hsep 0.5 [ pShape, pShape # reflectX ]
+qShape = polygon ( with & polyType .~ PolySides [ a, 90 @@ deg,  90 @@ deg, 270 @@ deg]
+                                                [ sqrt $ (w - innerW) ^ 2 + h ^ 2, innerW, innerH, innerW, innerH]
+                 ) # blackFill # alignT
+
+pqLogo = pad 2.2 $ center $ hsep (0.3) [ qShape # reflectX, qShape ]
